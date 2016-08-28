@@ -3,7 +3,7 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Android Debugger'
+      'label': 'STM32 Debugger'
       'submenu': [
         {
           'label': 'Toggle Debugging...'
