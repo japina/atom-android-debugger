@@ -1,6 +1,6 @@
 # atom-android-debugger package
 
-This is a fork from [https://github.com/xndcn/atom-debugger](https://github.com/xndcn/atom-debugger)
+This is a fork from [https://github.com/longseespace/atom-android-debugger](https://github.com/longseespace/atom-android-debugger)
 
 and modified for st-link
 

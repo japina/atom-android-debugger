@@ -13,7 +13,7 @@ class DebuggerView extends View
   @content: ->
     @div class: 'atom-debugger', =>
       @header class: 'header', =>
-        @span class: 'header-item title', 'Android Debugger'
+        @span class: 'header-item title', 'STM32 Debugger'
         @span class: 'header-item sub-title', outlet: 'targetLabel'
       @div class: 'btn-toolbar', =>
         @div class: 'btn-group', =>
@@ -29,9 +29,9 @@ class DebuggerView extends View
 
 
   initialize: (target, pid) ->
-    gdb = atom.config.get("android-debugger.gdbPath")
-    adb = atom.config.get("android-debugger.adbPath")
-    libSearchPath = atom.config.get("android-debugger.libSearchPath")
+    gdb = atom.config.get("stm32-debugger.gdbPath")
+    #adb = atom.config.get("android-debugger.adbPath")
+    libSearchPath = atom.config.get("stm32-debugger.libSearchPath")
 
     # command = adb
 
@@ -266,7 +266,7 @@ class DebuggerView extends View
 
     @attachButton.on 'click', =>
       @openDialogView = new OpenDialogView (pid) =>
-        atom.config.set('android-debugger.processId', pid)
+        atom.config.set('stm32-debugger.processId', pid)
         @pid = pid
 
         do (@GDB, @pid, @destroy) ->

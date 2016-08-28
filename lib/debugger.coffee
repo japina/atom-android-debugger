@@ -48,7 +48,7 @@ module.exports = Debugger =
       @debuggerView = null
     else
       # @openDialogView = new OpenDialogView (pid) =>
-      target = atom.config.get("android-debugger.targetBinary")
+      target = atom.config.get("stm32-debugger.targetBinary")
       # atom.config.set('android-debugger.processId', pid)
       if fs.existsSync(target)
         @debuggerView = new DebuggerView(target)

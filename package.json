@@ -1,12 +1,12 @@
 {
-  "name": "android-debugger",
+  "name": "stm32-debugger",
   "main": "./lib/debugger",
   "version": "0.1.0",
-  "description": "Android remote GDB debugger",
+  "description": "STM32 remote GDB debugger",
   "activationCommands": {
     "atom-workspace": "debugger:toggle"
   },
-  "repository": "https://github.com/longseespace/atom-android-debugger",
+  "repository": "https://github.com/japina/atom-stm32-debugger",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
@@ -15,7 +15,8 @@
     "atom-space-pen-views": "^2.0.0"
   },
   "keywords": [
-    "android",
+    "stm32",
+    "arm",
     "debugger",
     "gdb",
     "debug",
