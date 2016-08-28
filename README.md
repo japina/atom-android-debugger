@@ -2,11 +2,13 @@
 
 This is a fork from [https://github.com/xndcn/atom-debugger](https://github.com/xndcn/atom-debugger)
 
+and modified for st-link
+
 Before debugging, please add your source root directory into the tree-view and start gdbserver from your device:
 
 ```
-  adb forward tcp:5039 tcp:5039
-  adb shell /system/bin/gdbserver --multi localhost:5039
+  gdb forward tcp:4242 tcp:4242
+  gdb shell /system/bin/gdbserver --multi localhost:4242
 ```
 
 Remember to set paths:

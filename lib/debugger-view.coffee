@@ -32,7 +32,7 @@ class DebuggerView extends View
     gdb = atom.config.get("android-debugger.gdbPath")
     adb = atom.config.get("android-debugger.adbPath")
     libSearchPath = atom.config.get("android-debugger.libSearchPath")
-    
+
     # command = adb
 
     # stdout = (output) =>
@@ -42,8 +42,8 @@ class DebuggerView extends View
 
     # # attach to process
     # stdout = (output) =>
-    #   @GDB.target 'remote :5039', (clazz, result) ->
-    # args = ['shell', '/system/bin/gdbserver', 'tcp:5039', '--attach', pid]
+    #   @GDB.target 'remote :4242', (clazz, result) ->
+    # args = ['shell', '/system/bin/gdbserver', 'tcp:4242', '--attach', pid]
     # @attachToProcess = new BufferedProcess({command, args, stdout, stderr}).process
 
     @targetLabel.text(target)
@@ -54,7 +54,7 @@ class DebuggerView extends View
     @GDB.set 'target-async', 'on', (result) ->
     @GDB.setSourceDirectories atom.project.getPaths(), (done) ->
     @GDB.set 'solib-search-path', libSearchPath, (result) ->
-    @GDB.target 'select', 'extended-remote :5039', (clazz, result) ->
+    @GDB.target 'select', 'extended-remote :4242', (clazz, result) ->
 
     window.gdb = @GDB
 
@@ -262,7 +262,7 @@ class DebuggerView extends View
       @GDB.setSourceDirectories paths, (done) ->
 
     # @runButton.on 'click', =>
-    #   @GDB.run (result) ->    
+    #   @GDB.run (result) ->
 
     @attachButton.on 'click', =>
       @openDialogView = new OpenDialogView (pid) =>
@@ -306,7 +306,7 @@ class DebuggerView extends View
       @goRunningStatus()
       console.log(result)
 
-      
+
       #remove gdb vars
       for item in @vars
         @GDB.var "delete", "#{item.name}"
@@ -345,7 +345,7 @@ class DebuggerView extends View
                           type: data.type
                           value: item.value
                         @varsView.setItems(@vars)
-                
+
           else
             @GDB.next (result) ->
         else
@@ -358,7 +358,7 @@ class DebuggerView extends View
             @GDB.target 'detach', @pid, (result) =>
               @goExitedStatus()
               console.log(result)
-          
+
 
   # Tear down any state and detach
   destroy: ->
